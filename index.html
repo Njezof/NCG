@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Communications Group | L'information sans frontières</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome pour les icônes de connectivité -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts - Space Grotesk (Haute technologie) et Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;550;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        tech: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        nexus: {
+                            50: '#f0f3ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1', /* Indigo Nexus */
+                            600: '#4f46e5',
+                            400: '#22d3ee', /* Cyan Cyber */
+                            900: '#0f172a', /* Deep Slate */
+                            950: '#030712', /* Noir d'encre */
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #030712;
+            color: #e2e8f0;
+        }
+        /* Grille réseau animée en arrière-plan */
+        .network-bg {
+            background-image: 
+                radial-gradient(rgba(99, 102, 241, 0.1) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(3, 7, 18, 0.98), rgba(15, 23, 42, 0.95));
+            background-size: 50px 50px, 100% 100%;
+        }
+        /* Panneaux vitrés futuristes */
+        .cyber-card {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+        /* Effet de lueur textuelle */
+        .neon-glow {
+            text-shadow: 0 0 10px rgba(34, 211, 238, 0.5), 0 0 20px rgba(99, 102, 241, 0.3);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-nexus-400 selection:text-nexus-950 network-bg min-h-screen font-sans">
+
+    <!-- BARRE DE NAVIGATION FLOTTANTE -->
+    <nav class="fixed w-full z-50 bg-nexus-950/80 backdrop-blur-md border-b border-nexus-500/20 transition-all duration-300" id="main-nav">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo Nexus -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-nexus-600 to-nexus-400 flex items-center justify-center shadow-[0_0_15px_rgba(99,102,241,0.5)]">
+                        <i class="fa-solid fa-circle-nodes text-lg text-white group-hover:rotate-45 transition-transform duration-300"></i>
+                    </div>
+                    <div>
+                        <div class="font-tech font-bold text-lg text-white tracking-wider leading-none">NEXUS</div>
+                        <div class="text-[9px] text-nexus-400 tracking-widest uppercase font-tech mt-1">Communications Group</div>
+                    </div>
+                </a>
+
+                <!-- Liens de navigation grands écrans -->
+                <div class="hidden lg:flex space-x-8 items-center">
+                    <a href="#about" class="text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-nexus-400 transition-colors">Présentation</a>
+                    <a href="#sectors" class="text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-nexus-400 transition-colors">Domaines d'activité</a>
+                    <a href="#satellite" class="text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-nexus-400 transition-colors">Division Spatiale</a>
+                    <a href="#control-center" class="text-xs font-semibold uppercase tracking-wider text-nexus-400 hover:text-white bg-nexus-500/15 border border-nexus-500/30 px-3 py-1.5 rounded transition-all">Command Center</a>
+                    <a href="#infrastructures" class="text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-nexus-400 transition-colors">Infrastructures</a>
+                    <a href="#foundation" class="text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-nexus-400 transition-colors">Fondation</a>
+                </div>
+
+                <!-- Statut du réseau global -->
+                <div class="hidden sm:flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/30 px-3.5 py-1.5 rounded-full">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span class="text-[10px] font-tech font-bold text-emerald-400 tracking-wider uppercase">Réseau Global : En Ligne</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SECTION HERO CYBER-DYNAMIQUE -->
+    <header class="relative pt-40 pb-24 md:pt-48 md:pb-36 overflow-hidden flex items-center justify-center">
+        <!-- Noeud de communication vectoriel subtil en fond -->
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center opacity-5"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-nexus-950 via-transparent to-nexus-950"></div>
+
+        <div class="relative max-w-5xl mx-auto px-6 text-center z-10">
+            <p class="text-nexus-400 font-tech text-xs md:text-sm tracking-[0.4em] uppercase mb-4 animate-fade-in">
+                Depuis 1992 &bull; Leader Mondial des Infrastructures
+            </p>
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-tech font-bold tracking-tight leading-tight text-white mb-6">
+                L'information sans frontières,<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-nexus-400 via-nexus-500 to-indigo-300 neon-glow">la connexion sans limites.</span>
+            </h1>
+            
+            <div class="w-16 h-[2px] bg-gradient-to-r from-transparent via-nexus-400 to-transparent mx-auto mb-8"></div>
+            
+            <p class="text-base md:text-xl text-slate-300 font-light max-w-3xl mx-auto leading-relaxed mb-8">
+                « Relier les personnes. Connecter l'avenir. »
+            </p>
+            
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#control-center" class="px-6 py-3 bg-nexus-600 hover:bg-nexus-500 text-white font-bold rounded shadow-[0_0_20px_rgba(99,102,241,0.4)] transition-all text-xs uppercase tracking-wider font-tech flex items-center gap-2">
+                    <i class="fa-solid fa-terminal"></i> Accéder au Command Center
+                </a>
+                <a href="#sectors" class="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-bold rounded transition-all text-xs uppercase tracking-wider font-tech">
+                    Explorer nos technologies
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- CHIFFRES CLÉS MULTIDIMENSIONNELS -->
+    <section class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 -mt-12 mb-24">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            <div class="cyber-card p-6 rounded text-center group hover:border-nexus-400 transition-all">
+                <p class="text-[10px] text-slate-400 uppercase tracking-wider mb-1">Fondation</p>
+                <p class="text-2xl md:text-3xl font-tech font-bold text-nexus-400 group-hover:scale-105 transition-transform duration-300">1992</p>
+                <p class="text-[9px] text-slate-500 mt-1">Pionnier télécom</p>
+            </div>
+            <div class="cyber-card p-6 rounded text-center group hover:border-nexus-400 transition-all">
+                <p class="text-[10px] text-slate-400 uppercase tracking-wider mb-1">Collaborateurs</p>
+                <p class="text-2xl md:text-3xl font-tech font-bold text-nexus-400 group-hover:scale-105 transition-transform duration-300">52 000</p>
+                <p class="text-[9px] text-slate-500 mt-1">Experts mondiaux</p>
+            </div>
+            <div class="cyber-card p-6 rounded text-center group hover:border-nexus-400 transition-all">
+                <p class="text-[10px] text-slate-400 uppercase tracking-wider mb-1">Utilisateurs</p>
+                <p class="text-2xl md:text-3xl font-tech font-bold text-nexus-400 group-hover:scale-105 transition-transform duration-300">60M</p>
+                <p class="text-[9px] text-slate-500 mt-1">Connexions actives</p>
+            </div>
+            <div class="cyber-card p-6 rounded text-center group hover:border-nexus-400 transition-all">
+                <p class="text-[10px] text-slate-400 uppercase tracking-wider mb-1">Data Centers</p>
+                <p class="text-2xl md:text-3xl font-tech font-bold text-nexus-400 group-hover:scale-105 transition-transform duration-300">24</p>
+                <p class="text-[9px] text-slate-500 mt-1">Hébergement mondial</p>
+            </div>
+            <div class="cyber-card p-6 rounded text-center group hover:border-nexus-400 transition-all">
+                <p class="text-[10px] text-slate-400 uppercase tracking-wider mb-1">Flotte Orbitale</p>
+                <p class="text-2xl md:text-3xl font-tech font-bold text-nexus-400 group-hover:scale-105 transition-transform duration-300">9</p>
+                <p class="text-[9px] text-slate-500 mt-1">Satellites actifs</p>
+            </div>
+            <div class="cyber-card p-6 rounded text-center group hover:border-nexus-400 transition-all">
+                <p class="text-[10px] text-slate-400 uppercase tracking-wider mb-1">Présence</p>
+                <p class="text-2xl md:text-3xl font-tech font-bold text-nexus-400 group-hover:scale-105 transition-transform duration-300">90+ pays</p>
+                <p class="text-[9px] text-slate-500 mt-1">Interconnexion globale</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION PRÉSENTATION & MISSIONS -->
+    <section id="about" class="py-20 bg-nexus-900/30">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-16 items-center">
+                
+                <!-- Bloc gauche : Texte officiel -->
+                <div class="lg:col-span-7 space-y-8">
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-10 h-[1px] bg-nexus-400"></span>
+                            <span class="text-xs uppercase tracking-wider text-nexus-400 font-tech">Présentation générale</span>
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-tech font-bold text-white leading-tight">
+                            Bâtir l'ossature numérique mondiale
+                        </h2>
+                    </div>
+
+                    <p class="text-slate-300 text-base md:text-lg leading-relaxed font-light">
+                        <strong>Nexus Communications Group (NCG)</strong> est une entreprise technologique internationale spécialisée dans les télécommunications avancées, les réseaux numériques résilients, les infrastructures cloud de haute sécurité et les services de diffusion mondiaux.
+                    </p>
+
+                    <p class="text-slate-400 text-sm md:text-base leading-relaxed">
+                        Notre réseau planétaire s'appuie sur une fusion unique d'infrastructures physiques de fibre optique terrestre, de centres de données hautement protégés et d'une constellation spatiale active. Nous garantissons la fluidité et l'intégrité des données stratégiques circulant quotidiennement pour le compte d'administrations publiques, de conglomérats d'affaires et de millions d'utilisateurs.
+                    </p>
+
+                    <!-- Nos engagements stratégiques (Mission) -->
+                    <div class="pt-4">
+                        <h4 class="font-tech font-bold text-white text-sm uppercase tracking-wider mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-nexus-400"></i> Notre Mission Fondamentale
+                        </h4>
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div class="p-4 bg-slate-900/80 rounded border border-slate-800">
+                                <h5 class="text-white font-bold text-xs mb-1">Services d'élite</h5>
+                                <p class="text-[11px] text-slate-400">Fournir des services de communication hyper-performants et hautement chiffrés.</p>
+                            </div>
+                            <div class="p-4 bg-slate-900/80 rounded border border-slate-800">
+                                <h5 class="text-white font-bold text-xs mb-1">Infrastructures futuristes</h5>
+                                <p class="text-[11px] text-slate-400">Développer les structures optiques et les technologies quantiques de demain.</p>
+                            </div>
+                            <div class="p-4 bg-slate-900/80 rounded border border-slate-800">
+                                <h5 class="text-white font-bold text-xs mb-1">Garantie de résilience</h5>
+                                <p class="text-[11px] text-slate-400">Assurer la continuité totale des réseaux critiques face aux pannes ou menaces.</p>
+                            </div>
+                            <div class="p-4 bg-slate-900/80 rounded border border-slate-800">
+                                <h5 class="text-white font-bold text-xs mb-1">Synergie mondiale</h5>
+                                <p class="text-[11px] text-slate-400">Accompagner les entreprises et relier les personnes sans limites géographiques.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloc droit : Carte visuelle statique sur nos valeurs -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="cyber-card p-8 rounded-lg shadow-2xl w-full max-w-sm border-l-4 border-l-nexus-400">
+                        <h3 class="font-tech font-bold text-lg text-white mb-6 uppercase tracking-wider border-b border-slate-800 pb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-shield-halved text-nexus-400"></i> Nos Valeurs Clés
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3">
+                                <span class="text-nexus-400 font-bold text-xs font-tech mt-0.5">[01]</span>
+                                <div>
+                                    <h4 class="text-xs font-bold text-white uppercase">Innovation continue</h4>
+                                    <p class="text-[11px] text-slate-400 mt-0.5">Imaginer et prototyper les systèmes de télécoms du futur.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-nexus-400 font-bold text-xs font-tech mt-0.5">[02]</span>
+                                <div>
+                                    <h4 class="text-xs font-bold text-white uppercase">Fiabilité & Disponibilité</h4>
+                                    <p class="text-[11px] text-slate-400 mt-0.5">Assurer l'accès ininterrompu à l'information globale.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-nexus-400 font-bold text-xs font-tech mt-0.5">[03]</span>
+                                <div>
+                                    <h4 class="text-xs font-bold text-white uppercase">Sécurité et intégrité</h4>
+                                    <p class="text-[11px] text-slate-400 mt-0.5">Protéger les données souveraines et privées des flux sensibles.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-nexus-400 font-bold text-xs font-tech mt-0.5">[04]</span>
+                                <div>
+                                    <h4 class="text-xs font-bold text-white uppercase">Excellence opérationnelle</h4>
+                                    <p class="text-[11px] text-slate-400 mt-0.5">Suivre les standards d'audit les plus élevés du marché.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION DOMAINES D'ACTIVITÉ -->
+    <section id="sectors" class="py-24 bg-nexus-950 border-t border-b border-nexus-500/10">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <span class="text-xs text-nexus-400 font-tech tracking-[0.3em] uppercase block mb-3">Activités Technologiques</span>
+                <h2 class="text-3xl md:text-5xl font-tech font-bold text-white">Nos Domaines d'Expertise</h2>
+                <div class="w-16 h-[2px] bg-nexus-400 mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Télécommunications -->
+                <div class="cyber-card p-8 rounded-lg group hover:border-nexus-400 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded bg-nexus-500/10 text-nexus-400 flex items-center justify-center mb-6 group-hover:bg-nexus-500 group-hover:text-white transition-all">
+                            <i class="fa-solid fa-mobile-screen-button text-xl"></i>
+                        </div>
+                        <h3 class="font-tech font-bold text-white text-lg mb-4">Télécommunications</h3>
+                        <p class="text-xs text-slate-400 mb-6 leading-relaxed">
+                            Conception et gestion de réseaux cellulaires de nouvelle génération, pour des flux fluides terrestres et maritimes.
+                        </p>
+                    </div>
+                    <ul class="border-t border-slate-800 pt-4 space-y-2 text-xs text-slate-300">
+                        <li><i class="fa-solid fa-chevron-right text-nexus-400 text-[9px] mr-1"></i> Réseaux cellulaires ultra haut débit</li>
+                        <li><i class="fa-solid fa-chevron-right text-nexus-400 text-[9px] mr-1"></i> Téléphonie internationale interconnectée</li>
+                        <li><i class="fa-solid fa-chevron-right text-nexus-400 text-[9px] mr-1"></i> Solutions d'administrations publiques</li>
+                    </ul>
+                </div>
+
+                <!-- Internet et Réseaux -->
+                <div class="cyber-card p-8 rounded-lg group hover:border-nexus-400 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded bg-nexus-500/10 text-nexus-400 flex items-center justify-center mb-6 group-hover:bg-nexus-500 group-hover:text-white transition-all">
+                            <i class="fa-solid fa-network-wired text-xl"></i>
+                        </div>
+                        <h3 class="font-tech font-bold text-white text-lg mb-4">Internet et Réseaux</h3>
+                        <p class="text-xs text-slate-400 mb-6 leading-relaxed">
+                            Exploitation d'un immense réseau de fibres optiques interconnectant de multiples hubs continentaux sous-marins.
+                        </p>
+                    </div>
+                    <ul class="border-t border-slate-800 pt-4 space-y-2 text-xs text-slate-300">
+                        <li><i class="fa-solid fa-chevron-right text-nexus-400 text-[9px] mr-1"></i> Fibre optique terrestre et sous-marine</li>
+                        <li><i class="fa-solid fa-chevron-right text-nexus-400 text-[9px] mr-1"></i> Connexions privées haute sécurité</li>
+                        <li><i class="fa-solid fa-chevron-right text-nexus-400 text-[9px] mr-1"></i> Hubs d'interconnexion mondiaux</li>
+                    </ul>
+                </div>
+
+                <!-- Cloud et Hébergement -->
+                <div class="cyber-card p-8 rounded-lg group hover:border-nexus-400 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded bg-nexus-500/10 text-nexus-400 flex items-center justify-center mb-6 group-hover:bg-nexus-500 group-hover:text-white transition-all">
+                            <i class="fa-solid fa-server text-xl"></i>
+                        </div>
+                        <h3 class="font-tech font-bold text-white text-lg mb-4">Cloud et Hébergement</h3>
+                        <p class="text-xs text-slate-400 mb-6 leading-relaxed">
+                            Solutions d'infrastructures virtualisées, d'hébergement hybride et de redondance applicative à haute disponibilité.
+                        </p>
+                    </div>
+                    <ul class="border-t border-slate-800 pt-4 space-y-2 text-xs text-slate-300">
+                        <li><i class="fa-solid fa-chevron-right text-nexus-400 text-[9px] mr-1"></i> Serveurs dédiés & Cloud privé chiffré</li>
+                        <li><i class="fa-solid fa-chevron-right text-nexus-400 text-[9px] mr-1"></i> Systèmes de sauvegarde intercontinentaux</li>
+                        <li><i class="fa-solid fa-chevron-right text-nexus-400 text-[9px] mr-1"></i> Plan de continuité d'activité (PCA)</li>
+                    </ul>
+                </div>
+
+                <!-- Cybersécurité -->
+                <div class="cyber-card p-8 rounded-lg group hover:border-nexus-400 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded bg-nexus-500/10 text-nexus-400 flex items-center justify-center mb-6 group-hover:bg-nexus-500 group-hover:text-white transition-all">
+                            <i class="fa-solid fa-shield-halved text-xl"></i>
+                        </div>
+                        <h3 class="font-tech font-bold text-white text-lg mb-4">Cybersécurité des Flux</h3>
+                        <p class="text-xs text-slate-400 mb-6 leading-relaxed">
+                            Audits de pénétration réguliers, protection contre les intrusions de réseaux critiques et chiffrement de bout en bout.
+                        </p>
+                    </div>
+                    <ul class="border-t border-slate-800 pt-4 space-y-2 text-xs text-slate-300">
+                        <li><i class="fa-solid fa-chevron-right text-nexus-400 text-[9px] mr-1"></i> SOC opérationnel permanent (Surveillance)</li>
+                        <li><i class="fa-solid fa-chevron-right text-nexus-400 text-[9px] mr-1"></i> Chiffrement quantique expérimental</li>
+                        <li><i class="fa-solid fa-chevron-right text-nexus-400 text-[9px] mr-1"></i> Audits de conformité internationale</li>
+                    </ul>
+                </div>
+
+                <!-- Médias et Diffusion Numérique -->
+                <div class="cyber-card p-8 rounded-lg group hover:border-nexus-400 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded bg-nexus-500/10 text-nexus-400 flex items-center justify-center mb-6 group-hover:bg-nexus-500 group-hover:text-white transition-all">
+                            <i class="fa-solid fa-clapperboard text-xl"></i>
+                        </div>
+                        <h3 class="font-tech font-bold text-white text-lg mb-4">Médias & Diffusion</h3>
+                        <p class="text-xs text-slate-400 mb-6 leading-relaxed">
+                            Déploiement de plateformes multimédias robustes pour la diffusion de flux télévisuels et audiovisuels en direct.
+                        </p>
+                    </div>
+                    <ul class="border-t border-slate-800 pt-4 space-y-2 text-xs text-slate-300">
+                        <li><i class="fa-solid fa-chevron-right text-nexus-400 text-[9px] mr-1"></i> Transmission TV numérique & Satellite</li>
+                        <li><i class="fa-solid fa-chevron-right text-nexus-400 text-[9px] mr-1"></i> Serveurs de cache CDN mondiaux</li>
+                        <li><i class="fa-solid fa-chevron-right text-nexus-400 text-[9px] mr-1"></i> Diffusion d'événements majeurs en direct</li>
+                    </ul>
+                </div>
+
+                <!-- Division Satellitaire (Nexus Space Communications) -->
+                <div id="satellite" class="cyber-card p-8 rounded-lg border-nexus-400/50 hover:border-nexus-400 group hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute right-0 top-0 w-16 h-16 bg-nexus-400/10 rounded-bl-full flex items-center justify-center">
+                        <i class="fa-solid fa-satellite-dish text-nexus-400 text-sm"></i>
+                    </div>
+                    <div>
+                        <div class="w-12 h-12 rounded bg-nexus-400/20 text-nexus-400 flex items-center justify-center mb-6">
+                            <i class="fa-solid fa-satellite text-xl"></i>
+                        </div>
+                        <h3 class="font-tech font-bold text-white text-lg mb-4">Nexus Space Communications</h3>
+                        <p class="text-xs text-slate-400 mb-6 leading-relaxed">
+                            Notre division spatiale garantit la résilience suprême des télécommunications grâce à notre propre flotte de satellites géostationnaires.
+                        </p>
+                    </div>
+                    <ul class="border-t border-slate-800 pt-4 space-y-2 text-xs text-slate-300">
+                        <li><i class="fa-solid fa-chevron-right text-nexus-400 text-[9px] mr-1"></i> 9 Satellites de communication actifs</li>
+                        <li><i class="fa-solid fa-chevron-right text-nexus-400 text-[9px] mr-1"></i> Liaison satellitaire de secours (Failover)</li>
+                        <li><i class="fa-solid fa-chevron-right text-nexus-400 text-[9px] mr-1"></i> Couverture de secours en zones isolées</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION INTERACTIVE : CENTRE DE CONTRÔLE RÉSEAU (COMMAND CENTER) -->
+    <section id="control-center" class="py-24 bg-slate-900/40 relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs text-nexus-400 font-tech tracking-[0.3em] uppercase block mb-3">Simulation Opérationnelle</span>
+                <h2 class="text-3xl md:text-5xl font-tech font-bold text-white">Centre de Contrôle Réseau (NCG)</h2>
+                <div class="w-16 h-[2px] bg-nexus-400 mx-auto mt-4"></div>
+                <p class="text-slate-400 text-xs md:text-sm mt-4">
+                    Simulez la liaison satellitaire et contrôlez le flux de données fictif de *Nexus Space Communications* en temps réel.
+                </p>
+            </div>
+
+            <!-- Terminal de Simulation interactif -->
+            <div class="cyber-card p-6 md:p-8 rounded-lg max-w-4xl mx-auto border border-nexus-400/30 shadow-2xl bg-slate-950/80">
+                <!-- En-tête du terminal -->
+                <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-6">
+                    <div class="flex items-center gap-2">
+                        <span class="w-3 h-3 rounded-full bg-red-500"></span>
+                        <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
+                        <span class="w-3 h-3 rounded-full bg-green-500"></span>
+                        <span class="text-xs font-tech text-slate-400 ml-2">Console v1.99 - NEXUS SPACE DEPT</span>
+                    </div>
+                    <span class="text-[10px] font-tech text-nexus-400 uppercase bg-nexus-500/10 px-3 py-1 rounded">Actif</span>
+                </div>
+
+                <!-- Grille interne du simulateur -->
+                <div class="grid md:grid-cols-12 gap-8">
+                    <!-- Contrôles interactifs -->
+                    <div class="md:col-span-5 space-y-6">
+                        <h4 class="text-white font-tech font-bold text-sm uppercase tracking-wider mb-2">Paramètres de Liaison</h4>
+                        
+                        <!-- Toggle satellite active/inactive -->
+                        <div>
+                            <label class="block text-xs text-slate-400 mb-2 uppercase font-tech">Sélecteur de Satellite</label>
+                            <select id="sat-selector" class="w-full bg-slate-900 border border-slate-700 rounded p-2 text-xs text-white focus:outline-none focus:border-nexus-400">
+                                <option value="NXS-1">NXS-1 (Orbite Atlantique)</option>
+                                <option value="NXS-2">NXS-2 (Orbite Pacifique)</option>
+                                <option value="NXS-3">NXS-3 (Orbite Eurasie)</option>
+                                <option value="NXS-4">NXS-4 (Liaison Pôle Nord)</option>
+                                <option value="NXS-5">NXS-5 (Couverture Afrique)</option>
+                                <option value="NXS-6">NXS-6 (Relais Indien)</option>
+                                <option value="NXS-7">NXS-7 (Orbite Australis)</option>
+                                <option value="NXS-8">NXS-8 (Backup Quantique)</option>
+                                <option value="NXS-9">NXS-9 (Uplink Gouvernemental)</option>
+                            </select>
+                        </div>
+
+                        <!-- Glissière de débit (Bandwidth) -->
+                        <div>
+                            <div class="flex justify-between text-xs text-slate-400 mb-2">
+                                <label class="uppercase font-tech">Bande Passante (Gbps)</label>
+                                <span id="bandwidth-val" class="font-bold text-nexus-400">45 Gbps</span>
+                            </div>
+                            <input type="range" id="bandwidth-slider" min="10" max="100" value="45" class="w-full h-1 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-nexus-400">
+                        </div>
+
+                        <!-- Bouton d'action Diagnostic -->
+                        <button onclick="runDiagnostic()" class="w-full py-3 bg-nexus-500 hover:bg-nexus-600 text-white font-tech font-bold rounded text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-magnifying-glass-chart"></i> Lancer Diagnostic Liaison
+                        </button>
+                    </div>
+
+                    <!-- Moniteur & console de statut -->
+                    <div class="md:col-span-7 bg-black/50 border border-slate-800 rounded p-4 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="text-xs text-slate-400 uppercase font-tech">Moniteur Réseau Actif</span>
+                                <span id="sat-status" class="text-[10px] font-bold text-emerald-400 uppercase bg-emerald-500/10 px-2 py-0.5 rounded">CONNECTÉ</span>
+                            </div>
+                            
+                            <div class="grid grid-cols-2 gap-4 mb-4">
+                                <div class="bg-slate-900 p-3 rounded border border-slate-800">
+                                    <span class="text-[10px] text-slate-500 uppercase block mb-1">Latence Globale</span>
+                                    <span id="latency-val" class="text-lg font-bold text-white font-tech">12 ms</span>
+                                </div>
+                                <div class="bg-slate-900 p-3 rounded border border-slate-800">
+                                    <span class="text-[10px] text-slate-500 uppercase block mb-1">Qualité de Signal</span>
+                                    <span id="signal-val" class="text-lg font-bold text-white font-tech">99.8 %</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Journal console -->
+                        <div class="border-t border-slate-800 pt-3">
+                            <p class="text-[10px] text-slate-500 uppercase font-tech mb-2">Historique d'activité de la console</p>
+                            <div class="bg-slate-950 p-3 rounded font-mono text-[10px] text-green-400 h-28 overflow-y-auto space-y-1" id="console-log">
+                                <p class="text-slate-500">[14:02:11] Console initialisée avec succès.</p>
+                                <p class="text-slate-500">[14:03:04] Constellation NXS-9 alignée en orbite géostationnaire.</p>
+                                <p class="text-slate-500">[14:05:41] Tous les systèmes spatiaux rapportent un statut opérationnel vert.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION INFRASTRUCTURES & CENTRES DE RECHERCHE -->
+    <section id="infrastructures" class="py-24 bg-navy-900 border-t border-nexus-500/10 relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-16 items-center">
+                
+                <!-- Bloc gauche : Texte des Infrastructures -->
+                <div class="lg:col-span-6 space-y-8">
+                    <div>
+                        <span class="text-xs text-nexus-400 font-tech tracking-[0.3em] uppercase block mb-3">Réseau Physique & Logique</span>
+                        <h2 class="text-3xl md:text-5xl font-tech font-bold text-white leading-tight">Infrastructures du futur</h2>
+                        <div class="w-16 h-[2px] bg-nexus-400 mt-4"></div>
+                    </div>
+
+                    <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+                        Pour soutenir les exigences critiques du commerce mondial et des télécommunications nationales, NCG déploie et entretient de vastes complexes technologiques à travers le globe :
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="p-4 bg-slate-900/60 rounded border border-slate-800 flex gap-4">
+                            <div class="text-nexus-400 text-xl"><i class="fa-solid fa-server"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">24 Centres de Données Internationaux</h4>
+                                <p class="text-xs text-slate-400">Infrastructures d'hébergement isolées géographiquement, résilientes et hautement surveillées.</p>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-slate-900/60 rounded border border-slate-800 flex gap-4">
+                            <div class="text-nexus-400 text-xl"><i class="fa-solid fa-cable-car"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Réseaux Optiques à Haute Vitesse</h4>
+                                <p class="text-xs text-slate-400">Centaines de milliers de kilomètres de câbles optiques reliant les principaux continents.</p>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-slate-900/60 rounded border border-slate-800 flex gap-4">
+                            <div class="text-nexus-400 text-xl"><i class="fa-solid fa-satellite-dish"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Centres de Supervision Globale (GNOC)</h4>
+                                <p class="text-xs text-slate-400">Centres de commandement et de surveillance permanente des flux télécoms.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloc droit : Centre d'Innovation & Laboratoires -->
+                <div class="lg:col-span-6">
+                    <div class="cyber-card p-8 rounded-lg relative overflow-hidden">
+                        <div class="absolute right-0 top-0 w-32 h-32 bg-nexus-500/5 rounded-bl-full -z-10"></div>
+                        <h3 class="font-tech text-2xl font-bold text-white mb-2">Centre d'Innovation NCG</h3>
+                        <p class="text-nexus-400 text-xs tracking-wider uppercase mb-6 font-tech">Là où se dessine le futur des échanges</p>
+                        
+                        <p class="text-xs text-slate-300 leading-relaxed mb-6">
+                            Nos laboratoires de recherche et développement (R&D) travaillent quotidiennement sur des rupture technologiques majeures pour faire face aux besoins d'interconnexion croissants :
+                        </p>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="p-4 bg-slate-950 rounded border border-slate-800">
+                                <h4 class="text-white font-bold text-xs mb-1 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-microchip text-nexus-400"></i> Réseaux Next-Gen
+                                </h4>
+                                <p class="text-[10px] text-slate-400">Optimisation intelligente des architectures à latence ultra-faible.</p>
+                            </div>
+                            <div class="p-4 bg-slate-950 rounded border border-slate-800">
+                                <h4 class="text-white font-bold text-xs mb-1 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-brain text-nexus-400"></i> Intelligence Artificielle
+                                </h4>
+                                <p class="text-[10px] text-slate-400">Acheminement et diagnostic prédictif automatique des paquets.</p>
+                            </div>
+                            <div class="p-4 bg-slate-950 rounded border border-slate-800">
+                                <h4 class="text-white font-bold text-xs mb-1 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-key text-nexus-400"></i> Flux Quantiques
+                                </h4>
+                                <p class="text-[10px] text-slate-400">Cryptographie et transmission de clés quantiques inviolables.</p>
+                            </div>
+                            <div class="p-4 bg-slate-950 rounded border border-slate-800">
+                                <h4 class="text-white font-bold text-xs mb-1 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-rocket text-nexus-400"></i> Espace Avancé
+                                </h4>
+                                <p class="text-[10px] text-slate-400">Recherche de protocoles de transmission à longue distance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION ACTIONS DE LA FONDATION NCG -->
+    <section id="foundation" class="py-24 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="cyber-card p-8 md:p-12 rounded-lg border-l-4 border-l-nexus-400 shadow-2xl">
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Texte fondation -->
+                    <div class="lg:col-span-8 space-y-6">
+                        <div class="flex items-center gap-3">
+                            <span class="w-10 h-[1px] bg-nexus-400"></span>
+                            <span class="text-xs uppercase tracking-wider text-nexus-400 font-tech">Engagement Humanitaire et Social</span>
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-tech font-bold text-white">Fondation NCG</h2>
+                        <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+                            Nous croyons fermement qu'une connectivité accrue doit être au service de l'élévation sociétale. La <strong>Fondation NCG</strong> œuvre activement pour briser les fractures numériques, en finançant des infrastructures cruciales dans des régions reculées et en soutenant des initiatives d'apprentissage technologique.
+                        </p>
+                        
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4">
+                            <div class="p-4 bg-slate-900 rounded text-center border border-slate-800">
+                                <i class="fa-solid fa-user-graduate text-2xl text-nexus-400 mb-2"></i>
+                                <h4 class="text-white font-bold text-xs mb-1">Éducation</h4>
+                                <p class="text-[10px] text-slate-400">Bourses d'accès aux filières d'ingénierie réseaux</p>
+                            </div>
+                            <div class="p-4 bg-slate-900 rounded text-center border border-slate-800">
+                                <i class="fa-solid fa-flask-vial text-2xl text-nexus-400 mb-2"></i>
+                                <h4 class="text-white font-bold text-xs mb-1">Recherche</h4>
+                                <p class="text-[10px] text-slate-400">Soutien aux programmes de physique fondamentale</p>
+                            </div>
+                            <div class="p-4 bg-slate-900 rounded text-center border border-slate-800">
+                                <i class="fa-solid fa-signal text-2xl text-nexus-400 mb-2"></i>
+                                <h4 class="text-white font-bold text-xs mb-1">Infrastructures</h4>
+                                <p class="text-[10px] text-slate-400">Équipement de collectivités et d'écoles isolées</p>
+                            </div>
+                            <div class="p-4 bg-slate-900 rounded text-center border border-slate-800">
+                                <i class="fa-solid fa-hands-holding-child text-2xl text-nexus-400 mb-2"></i>
+                                <h4 class="text-white font-bold text-xs mb-1">Humanitaire</h4>
+                                <p class="text-[10px] text-slate-400">Réseau d'urgence déployé lors de crises majeures</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Encart engagement -->
+                    <div class="lg:col-span-4 bg-slate-900 p-6 rounded border border-nexus-400/20 text-center lg:text-left">
+                        <h4 class="font-tech font-bold text-white text-sm uppercase tracking-wider mb-4 flex items-center justify-center lg:justify-start gap-2">
+                            <i class="fa-solid fa-earth-americas text-nexus-400"></i> Une Vision Durable
+                        </h4>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                            « Permettre à chaque communauté d'avoir accès à la connaissance partagée du réseau mondial, afin de bâtir un monde plus équitable et hautement connecté. »
+                        </p>
+                        <span class="inline-block px-3 py-1 bg-nexus-400/10 text-nexus-400 text-[10px] font-bold rounded uppercase tracking-wider font-tech">Connectivité Sans Frontières</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION VALEURS & VISION D'AVENIR -->
+    <section class="py-24 bg-nexus-900/30 border-t border-nexus-500/15">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs text-nexus-400 font-tech tracking-[0.3em] uppercase block mb-3">Notre Idéal Commun</span>
+                <h2 class="text-3xl md:text-5xl font-tech font-bold text-white">Vision Technologique</h2>
+                <div class="w-16 h-[2px] bg-nexus-400 mx-auto mt-4"></div>
+            </div>
+
+            <div class="max-w-4xl mx-auto bg-slate-950 p-8 rounded-lg border border-nexus-500/20 text-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-r from-nexus-500/5 via-transparent to-nexus-400/5"></div>
+                <div class="relative z-10 space-y-4">
+                    <p class="text-xs text-nexus-400 font-tech tracking-[0.25em] uppercase">Philosophie de Conception</p>
+                    <p class="text-base md:text-lg text-slate-300 italic leading-relaxed">
+                        « Devenir la référence mondiale des communications numériques en offrant des infrastructures fiables, innovantes et sécurisées capables de soutenir les besoins d'un monde toujours plus connecté. »
+                    </p>
+                    <div class="pt-4">
+                        <span class="text-xs text-slate-500 uppercase font-tech tracking-widest block">Slogan Officiel</span>
+                        <span class="text-sm font-bold text-white font-tech uppercase tracking-wider">« Chaque connexion compte. »</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PIED DE PAGE SOLENNEL -->
+    <footer class="bg-nexus-950 py-16 border-t border-slate-900 text-slate-500 text-xs">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                
+                <div class="md:col-span-2 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded bg-nexus-600 flex items-center justify-center">
+                            <i class="fa-solid fa-circle-nodes text-sm text-white"></i>
+                        </div>
+                        <span class="font-tech font-bold text-sm tracking-wider text-white">NCG</span>
+                    </div>
+                    <p class="text-[11px] text-slate-400 leading-relaxed max-w-sm">
+                        Nexus Communications Group s'impose comme un pôle de connectivité mondiale, préservant et enrichissant le réseau mondial de données grâce à un savoir-faire technologique forgé depuis 1992.
+                    </p>
+                    <p class="text-xs font-tech italic text-nexus-400">
+                        « Relier les personnes. Connecter l'avenir. »
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-tech text-white font-bold text-[11px] uppercase tracking-wider mb-4">Divisions</h4>
+                    <ul class="space-y-2 text-[11px] text-slate-400">
+                        <li><i class="fa-solid fa-angles-right text-nexus-400/50 mr-1.5"></i> Télécommunications</li>
+                        <li><i class="fa-solid fa-angles-right text-nexus-400/50 mr-1.5"></i> Internet & Fibres</li>
+                        <li><i class="fa-solid fa-angles-right text-nexus-400/50 mr-1.5"></i> Nexus Space Dept.</li>
+                        <li><i class="fa-solid fa-angles-right text-nexus-400/50 mr-1.5"></i> Innovation Lab</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-tech text-white font-bold text-[11px] uppercase tracking-wider mb-4">Infrastructures</h4>
+                    <ul class="space-y-2 text-[11px] text-slate-400">
+                        <li>24 Data Centers</li>
+                        <li>Flotte Constellation NXS</li>
+                        <li>Centres d'Opérations GNOC</li>
+                        <li>Fondation NCG</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-900 text-center space-y-4">
+                <p>&copy; 2026 Nexus Communications Group (NCG). Tous droits réservés.</p>
+                <div class="max-w-2xl mx-auto text-[10px] text-slate-600 leading-relaxed bg-slate-900/40 p-4 rounded border border-slate-900">
+                    <p class="font-bold text-slate-500 uppercase tracking-wider mb-1">Avis de fiction légale</p>
+                    <p>Le groupe "Nexus Communications Group" (NCG), ses statistiques de couverture orbitale fictives (9 satellites), ses 24 centres de données ainsi que toutes les métriques de simulation ou faits historiques décrits sur cette page sont purement fictionnels et créés à des fins scénaristiques de divertissement ludique et sain.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LOGIQUE INTERACTIVE DU COMMAND CENTER (JAVASCRIPT) -->
+    <script>
+        // Effet dynamique de scroll pour la barre de navigation
+        const navbar = document.getElementById('main-nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 40) {
+                navbar.classList.add('bg-nexus-950/95', 'shadow-[0_4px_20px_rgba(3,7,18,0.8)]', 'py-3');
+                navbar.classList.remove('bg-nexus-950/80');
+            } else {
+                navbar.classList.add('bg-nexus-950/80');
+                navbar.classList.remove('bg-nexus-950/95', 'shadow-[0_4px_20px_rgba(3,7,18,0.8)]', 'py-3');
+            }
+        });
+
+        // Logique du Simulateur Interactif (Command Center)
+        const satSelector = document.getElementById('sat-selector');
+        const bandwidthSlider = document.getElementById('bandwidth-slider');
+        const bandwidthVal = document.getElementById('bandwidth-val');
+        const latencyVal = document.getElementById('latency-val');
+        const signalVal = document.getElementById('signal-val');
+        const consoleLog = document.getElementById('console-log');
+        const satStatus = document.getElementById('sat-status');
+
+        // Met à jour l'affichage de la bande passante lors du drag de la glissière
+        bandwidthSlider.addEventListener('input', (e) => {
+            const val = e.target.value;
+            bandwidthVal.innerText = `${val} Gbps`;
+        });
+
+        // Ajoute un log d'activité dans le terminal virtuel
+        function addLog(text) {
+            const time = new Date().toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+            const newLine = document.createElement('p');
+            newLine.className = "text-slate-400";
+            newLine.innerHTML = `<span class="text-nexus-400">[${time}]</span> ${text}`;
+            consoleLog.appendChild(newLine);
+            consoleLog.scrollTop = consoleLog.scrollHeight; // Auto-scroll
+        }
+
+        // Lance le diagnostic de la liaison
+        function runDiagnostic() {
+            const activeSat = satSelector.value;
+            const bandwidth = parseInt(bandwidthSlider.value);
+            
+            // Changement d'état visuel en "Diagnostic..."
+            satStatus.innerText = "TEST EN COURS...";
+            satStatus.className = "text-[10px] font-bold text-yellow-400 uppercase bg-yellow-500/10 px-2 py-0.5 rounded animate-pulse";
+            
+            addLog(`Requête de diagnostic envoyée à la flotte orbitale : ${activeSat}...`);
+            
+            // Simule un calcul de 1.5 seconde
+            setTimeout(() => {
+                // Algorithme de simulation
+                let latency, signalQuality;
+                
+                if (activeSat === "NXS-8" || activeSat === "NXS-9") {
+                    // Satellites d'élite/gouvernementaux
+                    latency = Math.floor(Math.random() * 5) + 4; // 4-8 ms (ultra-rapide)
+                } else {
+                    latency = Math.floor(Math.random() * 20) + 10; // 10-30 ms
+                }
+                
+                // Le signal varie en fonction de la bande passante requise
+                signalQuality = (100 - (bandwidth / 15) - (Math.random() * 2)).toFixed(2);
+                if (signalQuality > 100) signalQuality = 100;
+                
+                // Affichage des métriques calculées
+                latencyVal.innerText = `${latency} ms`;
+                signalVal.innerText = `${signalQuality} %`;
+                
+                // Restaure l'état vert
+                satStatus.innerText = "CONNECTÉ";
+                satStatus.className = "text-[10px] font-bold text-emerald-400 uppercase bg-emerald-500/10 px-2 py-0.5 rounded";
+                
+                addLog(`Rapport de statut [${activeSat}] : Latence = ${latency}ms | Signal = ${signalQuality}% | Bande Passante configurée = ${bandwidth} Gbps.`);
+                addLog(`Liaison stable. Paquets transmis en toute sécurité.`);
+            }, 1200);
+        }
+    </script>
+</body>
+</html>
